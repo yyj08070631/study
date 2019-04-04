@@ -1,8 +1,8 @@
 // 1. es5的类
-function Person (name, age) {
-  this.name = name
-  this.age = age
-}
+// function Person (name, age) {
+//   this.name = name
+//   this.age = age
+// }
 // var zs = new Person('张三'， 20)
 // console.log('我叫：' + zs.name + '，今年：' + zs.age + '岁')
 
@@ -27,3 +27,27 @@ function Person (name, age) {
 // Web.prototype = new Person('张三', 20)
 // var zs = new Web()
 // console.log('我叫：' + zs.name + '，今年：' + zs.age + '岁')
+
+// 原型链继承在实例化子类的时候没法给父类传参
+
+// 4. 原型链+构造函数组合继承
+// function Person (name, age) {
+//   this.name = name
+//   this.age = age
+//   this.run = function () {
+//     alert(this.name + '在运动')
+//   }
+// }
+// Person.prototype.sex = '男'
+// Person.prototype.work = function () {
+//   alert(this.name + '在工作')
+// }
+// function Web (name, age) {
+//   Person.call(this, name, age)
+// }
+// Web.prototype = new Person()
+// // 也可以像这样
+// // Web.prototype = Person.prototype
+// var w = new Web('赵四', 20)
+// w.run()
+// w.work()
