@@ -4,7 +4,10 @@ export default class HomeController extends Controller {
   public async index() {
     const { ctx } = this;
 
-    ctx.app.foo();
+    // console.log(app.foo());
+    // console.log(ctx.getIp());
+    // console.log(ctx.helper.getHelperData());
+    // console.log(ctx.request.foo());
 
     await ctx.render('index');
   }

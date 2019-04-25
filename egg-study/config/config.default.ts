@@ -8,7 +8,14 @@ export default (appInfo: EggAppInfo) => {
   config.keys = appInfo.name + '_1556023127971_712';
 
   // add your egg config in here
-  config.middleware = [];
+  config.middleware = ['printdate', 'forbidip'];
+  // 给中间件传值
+  config.printdate = {
+    aaa: 'aaa'
+  }
+  config.forbidip = {
+    forbidips: ['127.0.0.1', '192.168.56.1']
+  }
 
   // 配置ejs模板引擎
   config.view = {
