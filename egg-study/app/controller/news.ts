@@ -4,8 +4,9 @@ export default class NewsController extends Controller {
   public async index() {
     const { ctx } = this;
 
+    const username = ctx.cookies.get('username')
     const newsList: object[] = await ctx.service.news.getNewsList();
-    await ctx.render('news', { list: newsList });
+    await ctx.render('news', { list: newsList, username });
   }
   public async content() {
     const { ctx } = this;

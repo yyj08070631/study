@@ -8,6 +8,7 @@ export default class HomeController extends Controller {
     // console.log(ctx.getIp());
     // console.log(ctx.helper.getHelperData());
     // console.log(ctx.request.foo());
+    ctx.cookies.set('username', 'zhangsan')
 
     await ctx.render('index');
   }
